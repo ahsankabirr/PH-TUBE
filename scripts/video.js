@@ -29,6 +29,16 @@ const loadVideo = () => {
     .catch((err) => console.error(err));
 };
 
+// Time
+function getTimeString(time) {
+  // get Hour and rest seconds
+  const hour = parseInt(time / 3600);
+  let remainingSecond = time % 3600;
+  const minute = parseInt(remainingSecond / 60);
+  remainingSecond = remainingSecond % 60;
+  return `${hour}h ${minute}m ${remainingSecond}s`;
+}
+
 const cardDemo = {
   category_id: "1001",
   video_id: "aaaa",
@@ -62,7 +72,7 @@ const displayVideo = (videos) => {
       src="${video.thumbnail}"
       alt="Shoes" />
 
-      ${video.others.posted_date?.length === 0 ? `` : `<span class="absolute right-8 bottom-8 bg-black text-white rounded p-1 ">${video.others.posted_date}</span>`}
+      ${video.others.posted_date?.length === 0 ? `` : `<span class="absolute right-8 bottom-8 bg-black text-white rounded p-1 text-xs">${getTimeString(video.others.posted_date)}</span>`}
       
   </figure>
   <div class="px-0 py-2 flex gap-2">
