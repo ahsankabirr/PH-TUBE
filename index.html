@@ -17,13 +17,38 @@
   </head>
   <body>
     <header>
-      <nav>
+      <nav class="w-11/12 mx-auto py-2 flex justify-between itece">
         <div class="logo">
           <img src="./images/Logo.png" alt="" />
         </div>
-        <div class="search"></div>
-        <div class="sort"></div>
+        <div class="search">
+          <label class="input">
+            <svg
+              class="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input type="search" required placeholder="Search" />
+          </label>
+        </div>
+        <div class="sort btn btn-error">Blog</div>
       </nav>
+
+      <!-- ****************** -->
     </header>
+    <nav class="py-3 flex gap-5 justify-center" id="categories"></nav>
+
+    <script src="./scripts/video.js"></script>
   </body>
 </html>
